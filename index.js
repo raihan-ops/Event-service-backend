@@ -315,15 +315,15 @@ async function run() {
                 }
             }
             const update = await PurchaseCollection.updateOne(query, doc);
-            res.status(200).redirect('http://localhost:3000/success');
+            res.status(200).redirect('https://event-manage-system-2a080.web.app/success');
         })
         app.post('/fail', async (req, res) => {
             const pay = SslPayment.deleteOne({ tran_id: req.body.tran_id });
-            res.status(200).redirect('http://localhost:3000/chekout');
+            res.status(200).redirect('https://event-manage-system-2a080.web.app/chekout');
         })
         app.post('/cancel', async (req, res) => {
             const pay = SslPayment.deleteOne({ tran_id: req.body.tran_id });
-            res.status(200).redirect('http://localhost:3000/checkout');
+            res.status(200).redirect('https://event-manage-system-2a080.web.app/checkout');
         })
 
 
